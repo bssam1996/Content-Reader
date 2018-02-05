@@ -1,0 +1,11 @@
+H:\Bssam's\My Works\Content Reader\Content Reader\bin\Release\Content Reader.exe
+H:\Bssam's\My Works\Content Reader\Content Reader\bin\Release\Content Reader.pdb
+H:\Bssam's\My Works\Content Reader\Content Reader\bin\Release\Content Reader.xml
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Release\ResolveAssemblyReference.cache
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Release\Content_Reader.Form1.resources
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Release\Content_Reader.Resources.resources
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Release\GenerateResource.read.1.tlog
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Release\GenerateResource.write.1.tlog
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Release\Content Reader.exe
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Release\Content Reader.xml
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Release\Content Reader.pdb

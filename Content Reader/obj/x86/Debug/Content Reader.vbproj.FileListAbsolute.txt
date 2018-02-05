@@ -1,0 +1,56 @@
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\bin\Debug\Content Reader.exe
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\bin\Debug\Content Reader.pdb
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\bin\Debug\Content Reader.xml
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\obj\x86\Debug\Content_Reader.Form1.resources
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\obj\x86\Debug\Content_Reader.Resources.resources
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\obj\x86\Debug\Content Reader.exe
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\obj\x86\Debug\Content Reader.xml
+C:\Users\The Fire\AppData\Local\Temporary Projects\Content Reader\obj\x86\Debug\Content Reader.pdb
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.exe
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.xml
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.pdb
+H:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.exe
+H:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.pdb
+H:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.xml
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\ResolveAssemblyReference.cache
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Form1.resources
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Resources.resources
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\GenerateResource.read.1.tlog
+H:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\GenerateResource.write.1.tlog
+I:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.exe
+I:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.xml
+I:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.pdb
+I:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.exe
+I:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.pdb
+I:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.xml
+I:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Form1.resources
+I:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Resources.resources
+I:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.vbproj.GenerateResource.Cache
+I:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Form2.resources
+I:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.exe.config
+D:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.exe.config
+D:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.exe
+D:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.xml
+D:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.pdb
+D:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.exe
+D:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.pdb
+D:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.xml
+D:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Form1.resources
+D:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Form2.resources
+D:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Resources.resources
+E:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.exe.config
+E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.exe
+E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.xml
+E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.pdb
+E:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.exe
+E:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.pdb
+E:\Bssam's\My Works\Content Reader\Content Reader\bin\Debug\Content Reader.xml
+E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Form1.resources
+E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Form2.resources
+E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Resources.resources
+E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.vbproj.GenerateResource.Cache
+D:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.vbprojResolveAssemblyReference.cache
+D:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.vbproj.GenerateResource.Cache
