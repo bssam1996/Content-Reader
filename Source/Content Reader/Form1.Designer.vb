@@ -30,11 +30,20 @@ Partial Class Form1
         Me.ClearAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MoveUpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MoveDownToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MoveFirstToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MoveLastToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddItemAfterThisItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddItemBeforeThisItemToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangeTheViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DetailsDefaultToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -56,12 +65,6 @@ Partial Class Form1
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.MoveFirstToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MoveLastToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChangeTheViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DetailsDefaultToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip2.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -70,7 +73,7 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(3, 3)
+        Me.Button1.Location = New System.Drawing.Point(8, 9)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(124, 23)
         Me.Button1.TabIndex = 1
@@ -81,7 +84,7 @@ Partial Class Form1
         '
         Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeleteThisItemToolStripMenuItem, Me.ClearAllToolStripMenuItem, Me.MoveUpToolStripMenuItem, Me.MoveDownToolStripMenuItem, Me.MoveFirstToolStripMenuItem, Me.MoveLastToolStripMenuItem, Me.AddItemAfterThisItemToolStripMenuItem, Me.AddItemBeforeThisItemToolStripMenuItem, Me.ChangeTheViewToolStripMenuItem})
         Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(210, 224)
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(210, 202)
         '
         'DeleteThisItemToolStripMenuItem
         '
@@ -107,6 +110,18 @@ Partial Class Form1
         Me.MoveDownToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
         Me.MoveDownToolStripMenuItem.Text = "Move Down ↓"
         '
+        'MoveFirstToolStripMenuItem
+        '
+        Me.MoveFirstToolStripMenuItem.Name = "MoveFirstToolStripMenuItem"
+        Me.MoveFirstToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.MoveFirstToolStripMenuItem.Text = "Move First ↑↑"
+        '
+        'MoveLastToolStripMenuItem
+        '
+        Me.MoveLastToolStripMenuItem.Name = "MoveLastToolStripMenuItem"
+        Me.MoveLastToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.MoveLastToolStripMenuItem.Text = "Move Last ↓↓"
+        '
         'AddItemAfterThisItemToolStripMenuItem
         '
         Me.AddItemAfterThisItemToolStripMenuItem.Name = "AddItemAfterThisItemToolStripMenuItem"
@@ -118,6 +133,31 @@ Partial Class Form1
         Me.AddItemBeforeThisItemToolStripMenuItem.Name = "AddItemBeforeThisItemToolStripMenuItem"
         Me.AddItemBeforeThisItemToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
         Me.AddItemBeforeThisItemToolStripMenuItem.Text = "Add item before this item"
+        '
+        'ChangeTheViewToolStripMenuItem
+        '
+        Me.ChangeTheViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DetailsDefaultToolStripMenuItem, Me.ListToolStripMenuItem, Me.TilesToolStripMenuItem})
+        Me.ChangeTheViewToolStripMenuItem.Name = "ChangeTheViewToolStripMenuItem"
+        Me.ChangeTheViewToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
+        Me.ChangeTheViewToolStripMenuItem.Text = "Change the view"
+        '
+        'DetailsDefaultToolStripMenuItem
+        '
+        Me.DetailsDefaultToolStripMenuItem.Name = "DetailsDefaultToolStripMenuItem"
+        Me.DetailsDefaultToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.DetailsDefaultToolStripMenuItem.Text = "Details (Default)"
+        '
+        'ListToolStripMenuItem
+        '
+        Me.ListToolStripMenuItem.Name = "ListToolStripMenuItem"
+        Me.ListToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.ListToolStripMenuItem.Text = "List"
+        '
+        'TilesToolStripMenuItem
+        '
+        Me.TilesToolStripMenuItem.Name = "TilesToolStripMenuItem"
+        Me.TilesToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
+        Me.TilesToolStripMenuItem.Text = "Tile"
         '
         'Label1
         '
@@ -131,15 +171,18 @@ Partial Class Form1
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(133, 3)
+        Me.Button2.Location = New System.Drawing.Point(7, 50)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(125, 23)
         Me.Button2.TabIndex = 5
         Me.Button2.Text = "Save"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.TextBox2)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Button7)
         Me.Panel1.Controls.Add(Me.Button6)
@@ -161,17 +204,43 @@ Partial Class Form1
         Me.Panel1.Size = New System.Drawing.Size(482, 148)
         Me.Panel1.TabIndex = 6
         '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(366, 74)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(112, 20)
+        Me.TextBox2.TabIndex = 16
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(290, 76)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(70, 13)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "Space In MB:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(363, 34)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(38, 13)
+        Me.Label4.TabIndex = 14
+        Me.Label4.Text = "Name:"
+        '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(307, 5)
+        Me.TextBox1.Location = New System.Drawing.Point(366, 50)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(155, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(112, 20)
         Me.TextBox1.TabIndex = 13
         '
         'Button7
         '
+        Me.Button7.Enabled = False
         Me.Button7.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(359, 51)
+        Me.Button7.Location = New System.Drawing.Point(248, 35)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(103, 23)
         Me.Button7.TabIndex = 12
@@ -180,8 +249,9 @@ Partial Class Form1
         '
         'Button6
         '
+        Me.Button6.Enabled = False
         Me.Button6.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(253, 51)
+        Me.Button6.Location = New System.Drawing.Point(142, 35)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(100, 23)
         Me.Button6.TabIndex = 12
@@ -190,8 +260,9 @@ Partial Class Form1
         '
         'Button5
         '
+        Me.Button5.Enabled = False
         Me.Button5.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(359, 28)
+        Me.Button5.Location = New System.Drawing.Point(248, 6)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(103, 23)
         Me.Button5.TabIndex = 12
@@ -200,8 +271,9 @@ Partial Class Form1
         '
         'Button4
         '
+        Me.Button4.Enabled = False
         Me.Button4.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(253, 28)
+        Me.Button4.Location = New System.Drawing.Point(142, 6)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(100, 23)
         Me.Button4.TabIndex = 12
@@ -210,19 +282,18 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Enabled = False
-        Me.Button3.Font = New System.Drawing.Font("Tahoma", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(214, 3)
+        Me.Button3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(362, 6)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(87, 23)
+        Me.Button3.Size = New System.Drawing.Size(116, 26)
         Me.Button3.TabIndex = 12
-        Me.Button3.Text = "Add Item"
+        Me.Button3.Text = "Add Custom Item"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'CheckBox4
         '
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(7, 77)
+        Me.CheckBox4.Location = New System.Drawing.Point(177, 99)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(166, 17)
         Me.CheckBox4.TabIndex = 11
@@ -232,7 +303,7 @@ Partial Class Form1
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(7, 55)
+        Me.CheckBox3.Location = New System.Drawing.Point(7, 99)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(164, 17)
         Me.CheckBox3.TabIndex = 10
@@ -242,7 +313,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(250, 129)
+        Me.Label3.Location = New System.Drawing.Point(349, 123)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(68, 13)
         Me.Label3.TabIndex = 9
@@ -251,7 +322,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(250, 103)
+        Me.Label2.Location = New System.Drawing.Point(349, 100)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 13)
         Me.Label2.TabIndex = 8
@@ -260,7 +331,7 @@ Partial Class Form1
         'CheckBox5
         '
         Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(7, 126)
+        Me.CheckBox5.Location = New System.Drawing.Point(177, 122)
         Me.CheckBox5.Name = "CheckBox5"
         Me.CheckBox5.Size = New System.Drawing.Size(129, 17)
         Me.CheckBox5.TabIndex = 7
@@ -270,7 +341,7 @@ Partial Class Form1
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(7, 103)
+        Me.CheckBox2.Location = New System.Drawing.Point(7, 122)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(140, 17)
         Me.CheckBox2.TabIndex = 7
@@ -280,7 +351,7 @@ Partial Class Form1
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(7, 32)
+        Me.CheckBox1.Location = New System.Drawing.Point(7, 76)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(235, 17)
         Me.CheckBox1.TabIndex = 6
@@ -336,43 +407,6 @@ Partial Class Form1
         '
         Me.ColumnHeader2.Text = "Size"
         Me.ColumnHeader2.Width = 169
-        '
-        'MoveFirstToolStripMenuItem
-        '
-        Me.MoveFirstToolStripMenuItem.Name = "MoveFirstToolStripMenuItem"
-        Me.MoveFirstToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
-        Me.MoveFirstToolStripMenuItem.Text = "Move First ↑↑"
-        '
-        'MoveLastToolStripMenuItem
-        '
-        Me.MoveLastToolStripMenuItem.Name = "MoveLastToolStripMenuItem"
-        Me.MoveLastToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
-        Me.MoveLastToolStripMenuItem.Text = "Move Last ↓↓"
-        '
-        'ChangeTheViewToolStripMenuItem
-        '
-        Me.ChangeTheViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DetailsDefaultToolStripMenuItem, Me.ListToolStripMenuItem, Me.TilesToolStripMenuItem})
-        Me.ChangeTheViewToolStripMenuItem.Name = "ChangeTheViewToolStripMenuItem"
-        Me.ChangeTheViewToolStripMenuItem.Size = New System.Drawing.Size(209, 22)
-        Me.ChangeTheViewToolStripMenuItem.Text = "Change the view"
-        '
-        'DetailsDefaultToolStripMenuItem
-        '
-        Me.DetailsDefaultToolStripMenuItem.Name = "DetailsDefaultToolStripMenuItem"
-        Me.DetailsDefaultToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.DetailsDefaultToolStripMenuItem.Text = "Details (Default)"
-        '
-        'ListToolStripMenuItem
-        '
-        Me.ListToolStripMenuItem.Name = "ListToolStripMenuItem"
-        Me.ListToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.ListToolStripMenuItem.Text = "List"
-        '
-        'TilesToolStripMenuItem
-        '
-        Me.TilesToolStripMenuItem.Name = "TilesToolStripMenuItem"
-        Me.TilesToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
-        Me.TilesToolStripMenuItem.Text = "Tile"
         '
         'Form1
         '
@@ -436,5 +470,7 @@ Partial Class Form1
     Friend WithEvents DetailsDefaultToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label4 As Label
 End Class

@@ -52,5 +52,4 @@ E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.F
 E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Form2.resources
 E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content_Reader.Resources.resources
 E:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.vbproj.GenerateResource.Cache
-D:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.vbprojResolveAssemblyReference.cache
 D:\Bssam's\My Works\Content Reader\Content Reader\obj\x86\Debug\Content Reader.vbproj.GenerateResource.Cache

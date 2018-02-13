@@ -27,7 +27,6 @@ Partial Class Form2
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
@@ -68,11 +67,10 @@ Partial Class Form2
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(217, 18)
         Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Microsoft Visual Basic 2013"
+        Me.Label5.Text = "Microsoft Visual Basic 2017"
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.LinkLabel2)
         Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.LinkLabel1)
@@ -85,17 +83,6 @@ Partial Class Form2
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "About"
-        '
-        'LinkLabel2
-        '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel2.Location = New System.Drawing.Point(7, 152)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(225, 16)
-        Me.LinkLabel2.TabIndex = 9
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "http://www.bassamsc.netne.net"
         '
         'PictureBox1
         '
@@ -121,12 +108,12 @@ Partial Class Form2
         '
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(7, 126)
+        Me.LinkLabel1.Location = New System.Drawing.Point(9, 144)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(348, 16)
+        Me.LinkLabel1.Size = New System.Drawing.Size(360, 16)
         Me.LinkLabel1.TabIndex = 7
         Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "http://www.facebook.com/bassam.hesham.abozied"
+        Me.LinkLabel1.Text = "http://www.facebook.com/bassam.hesham.mahmoud"
         '
         'Label4
         '
@@ -182,7 +169,6 @@ Partial Class Form2
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel

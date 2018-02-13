@@ -166,21 +166,11 @@ Public Class Form1
             MsgBox("There was an error occured while saving" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
     End Sub
-
     Private Sub Listview1_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ListView1.KeyDown
         If e.KeyCode = Keys.Delete Then
-
-            Try
-                For Each i As ListViewItem In ListView1.SelectedItems
-                    ListView1.Items.Remove(i)
-                Next
-                Label3.Text = "Total Items : " & ListView1.Items.Count
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
+            DeleteThisItemToolStripMenuItem.PerformClick()
         End If
     End Sub
-
 
     Public abort As Boolean
     Function GetFolderSize(ByVal DirPath As String, ByVal includeSubFolders As Boolean) As Long
@@ -214,10 +204,33 @@ Public Class Form1
         End If
 
     End Sub
-
+    'k
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
         Try
-            ListView1.Items.Add(TextBox1.Text).SubItems.Add("None")
+            If TextBox1.Text <> "" Then
+
+                If TextBox2.Text = "" Then
+                    ListView1.Items.Add(TextBox1.Text).SubItems.Add("None")
+                Else
+                    Dim value As Integer = Val(TextBox2.Text)
+                    value = Format(value, "Fixed")
+                    Dim substring As String
+                    substring = value & " MB"
+                    If value > 1000 Then
+                        substring = substring & "(" & Format(value / 1024, "Fixed") & "GB)"
+                    ElseIf value < 1 Then
+                        substring = substring & "(" & Format(value * 1024, "Fixed") & "KB)"
+                    End If
+                    ListView1.Items.Add(TextBox1.Text).SubItems.Add(substring)
+                End If
+                TextBox1.Text = ""
+                TextBox2.Text = ""
+                ListView1.SelectedIndices.Clear()
+                ListView1.Items.Item(ListView1.Items.Count - 1).Selected = True
+                ListView1.Select()
+            Else
+                MsgBox("Please type a name at least!", MsgBoxStyle.Critical, "Error")
+            End If
             Label3.Text = "Total Items : " & ListView1.Items.Count
         Catch ex As Exception
             MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
@@ -234,21 +247,30 @@ Public Class Form1
     End Sub
 
     Private Sub DeleteThisItemToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteThisItemToolStripMenuItem.Click
-        Try
-            For Each i As ListViewItem In ListView1.SelectedItems
-                ListView1.Items.Remove(i)
-            Next
-            Label3.Text = "Total Items : " & ListView1.Items.Count
-        Catch ex As Exception
-            MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
-        End Try
-
+        If ListView1.Items.Count > 0 Then
+            Try
+                Dim current As Integer = ListView1.SelectedItems(0).Index
+                For Each i As ListViewItem In ListView1.SelectedItems
+                    ListView1.Items.Remove(i)
+                Next
+                Try
+                    ListView1.SelectedIndices.Clear()
+                    ListView1.Items(current).Selected = True
+                    ListView1.Select()
+                Catch
+                End Try
+                Label3.Text = "Total Items : " & ListView1.Items.Count
+            Catch ex As Exception
+                MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
+            End Try
+        End If
     End Sub
 
     Private Sub ClearAllToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClearAllToolStripMenuItem.Click
         Try
             ListView1.Items.Clear()
-            Label3.Text = "Total Items : " & ListView1.Items.Count
+            Label2.Text = "Total Space : 0"
+            Label3.Text = "Total Items : 0"
         Catch ex As Exception
             MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
@@ -332,11 +354,15 @@ Public Class Form1
                 MsgBox("Please select only one item!", MsgBoxStyle.Exclamation, "Selecting more than one item")
             Else
                 Dim b As String = ListView1.SelectedItems(0).Text
+                Dim bsub As String = ListView1.SelectedItems(0).SubItems(1).Text
                 Dim c As Integer = ListView1.SelectedItems(0).Index
                 ListView1.SelectedItems(0).Text = ListView1.Items(c - 1).Text
+                ListView1.SelectedItems(0).SubItems(1).Text = ListView1.Items(c - 1).SubItems(1).Text
                 ListView1.Items(c - 1).Text = b
+                ListView1.Items(c - 1).SubItems(1).Text = bsub
+                ListView1.SelectedIndices.Clear()
                 ListView1.Items(c - 1).Selected = True
-                ListView1.Items(c).Selected = False
+                ListView1.Select()
             End If
         Catch ex As Exception
             MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
@@ -349,11 +375,15 @@ Public Class Form1
                 MsgBox("Please select only one item!", MsgBoxStyle.Exclamation, "Selecting more than one item")
             Else
                 Dim b As String = ListView1.SelectedItems(0).Text
+                Dim bsub As String = ListView1.SelectedItems(0).SubItems(1).Text
                 Dim c As Integer = ListView1.SelectedItems(0).Index
                 ListView1.SelectedItems(0).Text = ListView1.Items(c + 1).Text
+                ListView1.SelectedItems(0).SubItems(1).Text = ListView1.Items(c + 1).SubItems(1).Text
                 ListView1.Items(c + 1).Text = b
+                ListView1.Items(c + 1).SubItems(1).Text = bsub
+                ListView1.SelectedIndices.Clear()
                 ListView1.Items(c + 1).Selected = True
-                ListView1.Items(c).Selected = False
+                ListView1.Select()
             End If
         Catch ex As Exception
             MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
@@ -374,7 +404,9 @@ Public Class Form1
             Dim b As String = ListView1.SelectedItems(0).SubItems(1).Text
             ListView1.SelectedItems(0).Remove()
             ListView1.Items.Insert(0, a).SubItems.Add(b)
+            ListView1.SelectedIndices.Clear()
             ListView1.Items(0).Selected = True
+            ListView1.Select()
         Catch ex As Exception
             MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
@@ -386,7 +418,9 @@ Public Class Form1
             Dim b As String = ListView1.SelectedItems(0).SubItems(1).Text
             ListView1.SelectedItems(0).Remove()
             ListView1.Items.Insert(ListView1.Items.Count - 1, a).SubItems.Add(b)
+            ListView1.SelectedIndices.Clear()
             ListView1.Items(ListView1.Items.Count - 1).Selected = True
+            ListView1.Select()
         Catch ex As Exception
             MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
@@ -412,7 +446,7 @@ Public Class Form1
                     Button4.Enabled = False
                     Button6.Enabled = False
                 End If
-                If ListView1.SelectedItems(0).Index < ListView1.Items.Count - 2 Then
+                If ListView1.SelectedItems(0).Index < ListView1.Items.Count - 1 Then
                     Button5.Enabled = True
                     Button7.Enabled = True
                 Else
@@ -435,8 +469,9 @@ Public Class Form1
         Try
             Dim c As Integer = ListView1.SelectedItems(0).Index
             ListView1.Items.Insert(c + 1, TextBox1.Text).SubItems.Add("None")
+            ListView1.SelectedIndices.Clear()
             ListView1.Items(c + 1).Selected = True
-            ListView1.Items(c).Selected = False
+            ListView1.Select()
             Label3.Text = "Total Items : " & ListView1.Items.Count
         Catch ex As Exception
             MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
@@ -447,8 +482,9 @@ Public Class Form1
         Try
             Dim c As Integer = ListView1.SelectedItems(0).Index
             ListView1.Items.Insert(ListView1.SelectedItems(0).Index, TextBox1.Text).SubItems.Add("None")
+            ListView1.SelectedIndices.Clear()
             ListView1.Items(c).Selected = True
-            ListView1.Items(c + 1).Selected = False
+            ListView1.Select()
             Label3.Text = "Total Items : " & ListView1.Items.Count
         Catch ex As Exception
             MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
