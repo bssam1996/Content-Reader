@@ -386,6 +386,7 @@ Partial Class Form1
         '
         'ListView1
         '
+        Me.ListView1.AllowDrop = True
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2})
         Me.ListView1.ContextMenuStrip = Me.ContextMenuStrip2
         Me.ListView1.FullRowSelect = True

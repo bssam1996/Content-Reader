@@ -14,116 +14,119 @@ Public Class Form1
                 d = 0
             End If
             If FolderBrowserDialog1.ShowDialog = DialogResult.OK Then
-                Label1.Text = folderbrowserdialog1.SelectedPath
-                If Label1.Text.Count = 3 Then
-                    Label1.Text = folderbrowserdialog1.SelectedPath
-                Else
-                    Label1.Text = folderbrowserdialog1.SelectedPath + "\"
-                End If
-                Dim di As New IO.DirectoryInfo(FolderBrowserDialog1.SelectedPath)
-                Dim diar1 As IO.DirectoryInfo() = di.GetDirectories()
-                Dim dra As IO.DirectoryInfo
-                Dim diar2 As IO.FileInfo() = di.GetFiles
-                Dim dra2 As IO.FileInfo
-                Dim a As Double
-                Dim b As String
-
-                For Each dra In diar1
-                    If CheckBox2.Checked = True Then
-                        b = di.ToString & "\" & dra.ToString & "\"
-                        a = GetFolderSize(b, True) / 1024 / 1024
-                        d = d + a
-                        a = Format(a, "Fixed")
-                        b = a & " MB"
-                        If a > 1000 Then
-                            b = b & "(" & Format(a / 1024, "Fixed") & "GB)"
-                        ElseIf a < 1 Then
-                            b = b & "(" & Format(a * 1024, "Fixed") & "KB)"
-                        End If
-                        ListView1.Items.Add(dra.ToString).SubItems.Add(b)
-                        If CheckBox5.Checked = True Then
-                            Dim sdi As New IO.DirectoryInfo(di.ToString & "\" & dra.ToString)
-                            Dim sdiar1 As IO.DirectoryInfo() = sdi.GetDirectories()
-                            Dim sdra As IO.DirectoryInfo
-                            Dim sdiar2 As IO.FileInfo() = sdi.GetFiles
-                            Dim sdra2 As IO.FileInfo
-                            For Each sdra In sdiar1
-                                b = sdi.ToString & "\" & sdra.ToString & "\"
-                                a = GetFolderSize(b, True) / 1024 / 1024
-                                a = Format(a, "Fixed")
-                                b = a & " MB"
-                                If a > 1000 Then
-                                    b = b & "(" & Format(a / 1024, "Fixed") & "GB)"
-                                ElseIf a < 1 Then
-                                    b = b & "(" & Format(a * 1024, "Fixed") & "KB)"
-                                End If
-                                ListView1.Items.Add("> " & sdra.ToString).SubItems.Add(b)
-                            Next
-                            For Each sdra2 In sdiar2
-                                b = sdi.ToString & "\" & sdra2.ToString
-                                Dim c = My.Computer.FileSystem.GetFileInfo(b)
-                                a = c.Length / 1024 / 1024
-                                a = Format(a, "Fixed")
-                                b = a & " MB"
-                                If a > 1000 Then
-                                    b = b & "(" & Format(a / 1024, "Fixed") & "GB)"
-                                ElseIf a < 1 Then
-                                    b = b & "(" & Format(a * 1024, "Fixed") & "KB)"
-                                End If
-                                ListView1.Items.Add("> " & sdra2.ToString).SubItems.Add(b)
-                            Next
-                        End If
-                    Else
-                        ListView1.Items.Add(dra.ToString).SubItems.Add("None")
-                        If CheckBox5.Checked = True Then
-                            Dim sdi As New IO.DirectoryInfo(di.ToString & "\" & dra.ToString)
-                            Dim sdiar1 As IO.DirectoryInfo() = sdi.GetDirectories()
-                            Dim sdra As IO.DirectoryInfo
-                            Dim sdiar2 As IO.FileInfo() = sdi.GetFiles
-                            Dim sdra2 As IO.FileInfo
-                            For Each sdra In sdiar1
-                                ListView1.Items.Add("> " & sdra.ToString).SubItems.Add("None")
-                            Next
-                            For Each sdra2 In sdiar2
-                                ListView1.Items.Add("> " & sdra2.ToString).SubItems.Add("None")
-                            Next
-                        End If
-                    End If
-
-                Next
-                For Each dra2 In diar2
-                    If CheckBox2.Checked = True Then
-                        b = di.ToString & "\" & dra2.ToString
-                        Dim c = My.Computer.FileSystem.GetFileInfo(b)
-                        a = c.Length / 1024 / 1024
-                        d = d + a
-                        a = Format(a, "Fixed")
-                        b = a & " MB"
-                        If a > 1000 Then
-                            b = b & "(" & Format(a / 1024, "Fixed") & "GB)"
-                        ElseIf a < 1 Then
-                            b = b & "(" & Format(a * 1024, "Fixed") & "KB)"
-                        End If
-                        ListView1.Items.Add(dra2.ToString).SubItems.Add(b)
-                    Else
-                        ListView1.Items.Add(dra2.ToString).SubItems.Add("None")
-                    End If
-                Next
-                If CheckBox2.Checked = True Then
-                    d = Format(d, "Fixed")
-                    b = d & " MB"
-                    If d > 1000 Then
-                        b = b & "(" & Format(d / 1024, "Fixed") & "GB)"
-                    ElseIf d < 1 Then
-                        b = b & "(" & Format(d * 1024, "Fixed") & "KB)"
-                    End If
-                    Label2.Text = "Total Space : " & b
-                End If
+                adding(FolderBrowserDialog1.SelectedPath)
             End If
             Label3.Text = "Total Items : " & ListView1.Items.Count
         Catch ex As Exception
             MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
+    End Sub
+    Public Sub adding(path As String)
+        Label1.Text = path
+        If Label1.Text.Count = 3 Then
+            Label1.Text = path
+        Else
+            Label1.Text = path + "\"
+        End If
+        Dim di As New IO.DirectoryInfo(path)
+        Dim diar1 As IO.DirectoryInfo() = di.GetDirectories()
+        Dim dra As IO.DirectoryInfo
+        Dim diar2 As IO.FileInfo() = di.GetFiles
+        Dim dra2 As IO.FileInfo
+        Dim a As Double
+        Dim b As String
+
+        For Each dra In diar1
+            If CheckBox2.Checked = True Then
+                b = di.ToString & "\" & dra.ToString & "\"
+                a = GetFolderSize(b, True) / 1024 / 1024
+                d = d + a
+                a = Format(a, "Fixed")
+                b = a & " MB"
+                If a > 1000 Then
+                    b = b & "(" & Format(a / 1024, "Fixed") & "GB)"
+                ElseIf a < 1 Then
+                    b = b & "(" & Format(a * 1024, "Fixed") & "KB)"
+                End If
+                ListView1.Items.Add(dra.ToString).SubItems.Add(b)
+                If CheckBox5.Checked = True Then
+                    Dim sdi As New IO.DirectoryInfo(di.ToString & "\" & dra.ToString)
+                    Dim sdiar1 As IO.DirectoryInfo() = sdi.GetDirectories()
+                    Dim sdra As IO.DirectoryInfo
+                    Dim sdiar2 As IO.FileInfo() = sdi.GetFiles
+                    Dim sdra2 As IO.FileInfo
+                    For Each sdra In sdiar1
+                        b = sdi.ToString & "\" & sdra.ToString & "\"
+                        a = GetFolderSize(b, True) / 1024 / 1024
+                        a = Format(a, "Fixed")
+                        b = a & " MB"
+                        If a > 1000 Then
+                            b = b & "(" & Format(a / 1024, "Fixed") & "GB)"
+                        ElseIf a < 1 Then
+                            b = b & "(" & Format(a * 1024, "Fixed") & "KB)"
+                        End If
+                        ListView1.Items.Add("> " & sdra.ToString).SubItems.Add(b)
+                    Next
+                    For Each sdra2 In sdiar2
+                        b = sdi.ToString & "\" & sdra2.ToString
+                        Dim c = My.Computer.FileSystem.GetFileInfo(b)
+                        a = c.Length / 1024 / 1024
+                        a = Format(a, "Fixed")
+                        b = a & " MB"
+                        If a > 1000 Then
+                            b = b & "(" & Format(a / 1024, "Fixed") & "GB)"
+                        ElseIf a < 1 Then
+                            b = b & "(" & Format(a * 1024, "Fixed") & "KB)"
+                        End If
+                        ListView1.Items.Add("> " & sdra2.ToString).SubItems.Add(b)
+                    Next
+                End If
+            Else
+                ListView1.Items.Add(dra.ToString).SubItems.Add("None")
+                If CheckBox5.Checked = True Then
+                    Dim sdi As New IO.DirectoryInfo(di.ToString & "\" & dra.ToString)
+                    Dim sdiar1 As IO.DirectoryInfo() = sdi.GetDirectories()
+                    Dim sdra As IO.DirectoryInfo
+                    Dim sdiar2 As IO.FileInfo() = sdi.GetFiles
+                    Dim sdra2 As IO.FileInfo
+                    For Each sdra In sdiar1
+                        ListView1.Items.Add("> " & sdra.ToString).SubItems.Add("None")
+                    Next
+                    For Each sdra2 In sdiar2
+                        ListView1.Items.Add("> " & sdra2.ToString).SubItems.Add("None")
+                    Next
+                End If
+            End If
+
+        Next
+        For Each dra2 In diar2
+            If CheckBox2.Checked = True Then
+                b = di.ToString & "\" & dra2.ToString
+                Dim c = My.Computer.FileSystem.GetFileInfo(b)
+                a = c.Length / 1024 / 1024
+                d = d + a
+                a = Format(a, "Fixed")
+                b = a & " MB"
+                If a > 1000 Then
+                    b = b & "(" & Format(a / 1024, "Fixed") & "GB)"
+                ElseIf a < 1 Then
+                    b = b & "(" & Format(a * 1024, "Fixed") & "KB)"
+                End If
+                ListView1.Items.Add(dra2.ToString).SubItems.Add(b)
+            Else
+                ListView1.Items.Add(dra2.ToString).SubItems.Add("None")
+            End If
+        Next
+        If CheckBox2.Checked = True Then
+            d = Format(d, "Fixed")
+            b = d & " MB"
+            If d > 1000 Then
+                b = b & "(" & Format(d / 1024, "Fixed") & "GB)"
+            ElseIf d < 1 Then
+                b = b & "(" & Format(d * 1024, "Fixed") & "KB)"
+            End If
+            Label2.Text = "Total Space : " & b
+        End If
     End Sub
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Label3.Text = "Total Items : " & ListView1.Items.Count
@@ -243,7 +246,7 @@ Public Class Form1
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
-        Form2.ShowDialog(Me)
+        About.ShowDialog(Me)
     End Sub
 
     Private Sub DeleteThisItemToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteThisItemToolStripMenuItem.Click
@@ -501,5 +504,58 @@ Public Class Form1
 
     Private Sub TilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TilesToolStripMenuItem.Click
         ListView1.View = View.Tile
+    End Sub
+
+    Private Sub ListView1_DragDrop(sender As Object, e As DragEventArgs) Handles ListView1.DragDrop
+        Try
+            If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+                Dim filePaths As String() = CType(e.Data.GetData(DataFormats.FileDrop), String())
+                For i As Integer = 0 To filePaths.Count - 1
+                    If Directory.Exists(filePaths(i)) Then
+                        adding(filePaths(i))
+                    ElseIf File.Exists(filePaths(i)) Then
+                        Dim a As Double
+                        Dim b As String
+                        If CheckBox2.Checked = True Then
+                            Dim c = My.Computer.FileSystem.GetFileInfo(filePaths(i))
+                            a = c.Length / 1024 / 1024
+                            d = d + a
+                            a = Format(a, "Fixed")
+                            b = a & " MB"
+                            If a > 1000 Then
+                                b = b & "(" & Format(a / 1024, "Fixed") & "GB)"
+                            ElseIf a < 1 Then
+                                b = b & "(" & Format(a * 1024, "Fixed") & "KB)"
+                            End If
+                            ListView1.Items.Add(System.IO.Path.GetFileName(filePaths(i))).SubItems.Add(b)
+                        Else
+                            ListView1.Items.Add(System.IO.Path.GetFileName(filePaths(i))).SubItems.Add("None")
+                        End If
+
+                        If CheckBox2.Checked = True Then
+                            d = Format(d, "Fixed")
+                            b = d & " MB"
+                            If d > 1000 Then
+                                b = b & "(" & Format(d / 1024, "Fixed") & "GB)"
+                            ElseIf d < 1 Then
+                                b = b & "(" & Format(d * 1024, "Fixed") & "KB)"
+                            End If
+                            Label2.Text = "Total Space : " & b
+                        End If
+                    End If
+                Next
+            End If
+        Catch ex As Exception
+            MsgBox("There was an error occured" & vbNewLine & "Details :" & vbNewLine & ex.Message, MsgBoxStyle.Critical, "Error")
+        End Try
+    End Sub
+
+    Private Sub ListView1_DragEnter(sender As Object, e As DragEventArgs) Handles ListView1.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            Dim filePaths As String() = CType(e.Data.GetData(DataFormats.FileDrop), String())
+            e.Effect = DragDropEffects.Copy
+        Else
+            e.Effect = DragDropEffects.None
+        End If
     End Sub
 End Class
