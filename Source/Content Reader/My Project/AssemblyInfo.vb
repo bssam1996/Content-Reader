@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Content Reader")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyTitle("B++ -Content Reader-")>
+<Assembly: AssemblyDescription("Content Reader is an application which allows you to import the name of the contents of any folder in it and save them in a text file. In addition, you can add automatically the size of each folder and file of the folder and sub-folders.")>
+<Assembly: AssemblyCompany("B++")>
 <Assembly: AssemblyProduct("Content Reader")> 
-<Assembly: AssemblyCopyright("Copyright © Bassam Heshm 2012")> 
-<Assembly: AssemblyTrademark("Hũnţẽř")> 
+<Assembly: AssemblyCopyright("Copyright © Bassam Heshm 2012")>
+<Assembly: AssemblyTrademark("B++")>
 
 <Assembly: ComVisible(False)>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.6.0.0")>
-<Assembly: AssemblyFileVersion("1.6.0.0")>
+<Assembly: AssemblyVersion("2.0.0.0")>
+<Assembly: AssemblyFileVersion("2.0.0.0")>
